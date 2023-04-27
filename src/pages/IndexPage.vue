@@ -5,13 +5,22 @@
       src="~assets/logox200.png"
       style="width: 200px; height: 70px"
     >
+    
   </q-page>
 </template>
 
-<script>
+<script lang="ts">
 import { defineComponent } from 'vue'
-
+import { useQuasar } from 'quasar';
 export default defineComponent({
-  name: 'IndexPage'
-})
+  name: 'IndexPage',
+  setup() {
+    const $q = useQuasar();
+    return{
+      toggleDarkMode() {
+        $q.dark.toggle();
+      },
+    };
+  },
+});
 </script>
